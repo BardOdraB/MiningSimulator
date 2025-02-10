@@ -29,7 +29,7 @@
             width: 100vw;
             height: 100vh;
             position: relative;
-            background: url('ангар.jpg') no-repeat center center;
+            background: no-repeat center center;
             background-size: cover;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
@@ -140,6 +140,10 @@
                 climateSelection.style.display = 'none';
                 gameContainer.style.display = 'flex';
                 gameContainer.style.opacity = '1';
+                
+                if (climate === 'warm' || climate === 'cold') {
+                    gameContainer.style.backgroundImage = "url('ангар.jpg')";
+                }
             }, 500);
             
             localStorage.setItem('climate', climate);
