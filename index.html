@@ -35,25 +35,26 @@
             transition: opacity 0.5s ease-in-out;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            padding-bottom: 60px;
         }
         .balance {
             font-size: 24px;
             margin-bottom: 20px;
         }
         .buttons {
-            position: absolute;
+            position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             padding: 10px;
             background: rgba(0, 0, 0, 0.8);
         }
         .btn {
-            flex-grow: 1;
+            flex: 1;
             padding: 12px;
             font-size: 16px;
             cursor: pointer;
@@ -64,6 +65,7 @@
             color: white;
             margin: 5px;
             text-align: center;
+            min-width: 60px;
         }
         .btn:hover {
             background: #005f99;
