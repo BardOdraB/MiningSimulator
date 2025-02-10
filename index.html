@@ -13,10 +13,11 @@
             margin: 0;
             background: #121212;
             color: white;
+            overflow: hidden;
         }
         .container {
             display: none;
-            max-width: 100vw;
+            width: 100vw;
             height: 100vh;
             position: relative;
             background: url('hangar.jpg') no-repeat center center;
@@ -30,11 +31,13 @@
         }
         .buttons {
             position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 10px;
+            left: 0;
+            width: 100%;
             display: flex;
-            gap: 10px;
+            justify-content: space-around;
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.7);
         }
         .btn {
             padding: 12px 20px;
@@ -45,6 +48,8 @@
             transition: transform 0.2s ease-in-out, background 0.3s;
             background: #0088cc;
             color: white;
+            flex: 1;
+            margin: 0 5px;
         }
         .btn:hover {
             background: #005f99;
