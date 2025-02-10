@@ -2,18 +2,23 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Симулятор майнинга</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 0;
-            margin: 0;
             background: #121212;
             color: white;
-            overflow: hidden;
         }
         .container {
             display: none;
@@ -31,13 +36,13 @@
         }
         .buttons {
             position: absolute;
-            bottom: 10px;
+            bottom: 0;
             left: 0;
             width: 100%;
             display: flex;
             justify-content: space-around;
             padding: 10px 0;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
         }
         .btn {
             padding: 12px 20px;
@@ -50,6 +55,7 @@
             color: white;
             flex: 1;
             margin: 0 5px;
+            text-align: center;
         }
         .btn:hover {
             background: #005f99;
@@ -60,6 +66,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            width: 100vw;
             height: 100vh;
             background: url('climate_selection.jpg') no-repeat center center;
             background-size: cover;
