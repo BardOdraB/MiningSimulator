@@ -19,6 +19,10 @@
             text-align: center;
             background: #121212;
             color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .container {
             display: none;
@@ -29,6 +33,10 @@
             background-size: cover;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .balance {
             font-size: 24px;
@@ -123,7 +131,7 @@
             climateSelection.style.opacity = '0';
             setTimeout(() => {
                 climateSelection.style.display = 'none';
-                gameContainer.style.display = 'block';
+                gameContainer.style.display = 'flex';
                 gameContainer.style.opacity = '1';
             }, 500);
             
