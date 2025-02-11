@@ -70,10 +70,30 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .btn img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 5px;
         }
         .btn:hover {
             background: #444;
             transform: scale(1.1);
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .back-button img {
+            width: 32px;
+            height: 32px;
         }
         .climate-selection {
             display: flex;
@@ -112,14 +132,17 @@
     </div>
     
     <div class="container" id="game-container">
+        <button class="back-button" onclick="goBack()">
+            <img src="back_icon.jpg" alt="Назад">
+        </button>
         <h2>Симулятор майнинга</h2>
         <p class="balance">Баланс: <span id="balance">0</span> монет</p>
         <div class="buttons">
-            <button class="btn">🏠 Главная</button>
-            <button class="btn">👥 Рефералы</button>
-            <button class="btn">💰 TFT</button>
-            <button class="btn">👛 Кошелёк</button>
-            <button class="btn">📖 Информация</button>
+            <button class="btn"><img src="https://raw.githubusercontent.com/BardOdraB/images/refs/heads/main/shop_icon.jpg" alt="Магазин">Магазин</button>
+            <button class="btn"><img src="https://raw.githubusercontent.com/BardOdraB/images/refs/heads/main/workshop_icon.jpg" alt="Мастерская">Мастерская</button>
+            <button class="btn"><img src="https://raw.githubusercontent.com/BardOdraB/images/refs/heads/main/home_icon.jpg" alt="Главная">Главная</button>
+            <button class="btn"><img src="https://raw.githubusercontent.com/BardOdraB/images/refs/heads/main/wallet_icon.jpg" alt="Кошелёк">Кошелёк</button>
+            <button class="btn"><img src="https://raw.githubusercontent.com/BardOdraB/images/refs/heads/main/settings_icon.jpg" alt="Настройки">Настройки</button>
         </div>
     </div>
 
@@ -142,13 +165,24 @@
                 gameContainer.style.opacity = '1';
                 
                 if (climate === 'warm') {
-                    gameContainer.style.backgroundImage = "url('https://raw.githubusercontent.com/BardOdraB/images/refs/heads/main/warm_background.jpg')";
+                    gameContainer.style.backgroundImage = "url('https://raw.githubusercontent.com/BardOdraB/images/main/warm_background.jpg')";
                 } else if (climate === 'cold') {
-                    gameContainer.style.backgroundImage = "url('https://raw.githubusercontent.com/BardOdraB/images/refs/heads/main/cold_background.jpg')";
+                    gameContainer.style.backgroundImage = "url('https://raw.githubusercontent.com/BardOdraB/images/main/cold_background.jpg')";
                 }
             }, 500);
             
             localStorage.setItem('climate', climate);
+        }
+
+        function goBack() {
+            let gameContainer = document.getElementById('game-container');
+            let climateSelection = document.getElementById('climate-selection');
+            gameContainer.style.opacity = '0';
+            setTimeout(() => {
+                gameContainer.style.display = 'none';
+                climateSelection.style.display = 'flex';
+                climateSelection.style.opacity = '1';
+            }, 500);
         }
     </script>
 </body>
