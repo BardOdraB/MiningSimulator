@@ -39,7 +39,7 @@
             background-position: center;
         }
         .balance {
-            font-size: 24px;
+            font-size: 18px;
             margin-bottom: 20px;
         }
         .buttons {
@@ -49,44 +49,41 @@
             width: 100%;
             display: flex;
             justify-content: space-around;
-            padding: 15px;
+            padding: 10px;
             background: rgba(0, 0, 0, 0.9);
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
         }
         .btn {
             flex: 1;
-            padding: 10px;
-            font-size: 14px;
+            padding: 5px;
+            font-size: 12px;
             cursor: pointer;
             border: none;
             border-radius: 10px;
             transition: transform 0.2s ease-in-out, background 0.3s;
             background: #333;
             color: white;
-            margin: 5px;
+            margin: 3px;
             text-align: center;
-            min-width: 60px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         .btn img {
-            width: 24px;
-            height: 24px;
-            margin-bottom: 5px;
+            width: 100%;
+            height: auto;
+            max-height: 50px;
+            object-fit: contain;
         }
         .btn:hover {
             background: #444;
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         .back-button {
             position: absolute;
             top: 10px;
-            right: 10px;
+            left: 10px;
             background: none;
             border: none;
             cursor: pointer;
@@ -109,8 +106,8 @@
         }
         .climate-btn {
             margin: 10px;
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 10px 20px;
+            font-size: 16px;
             cursor: pointer;
             border: none;
             border-radius: 5px;
@@ -163,8 +160,7 @@
                 gameContainer.style.visibility = 'visible';
                 gameContainer.style.display = 'flex';
                 gameContainer.style.opacity = '1';
-                
-                if (climate === 'warm') {
+             if (climate === 'warm') {
                     gameContainer.style.backgroundImage = "url('https://raw.githubusercontent.com/BardOdraB/images/main/warm_background.jpg')";
                 } else if (climate === 'cold') {
                     gameContainer.style.backgroundImage = "url('https://raw.githubusercontent.com/BardOdraB/images/main/cold_background.jpg')";
