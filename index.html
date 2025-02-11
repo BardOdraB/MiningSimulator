@@ -35,7 +35,8 @@
             align-items: center;
             padding-bottom: 80px;
             visibility: hidden;
-            background: #1e1e1e;
+            background-size: cover;
+            background-position: center;
         }
         .balance {
             font-size: 24px;
@@ -138,9 +139,13 @@
                 climateSelection.style.display = 'none';
                 gameContainer.style.visibility = 'visible';
                 gameContainer.style.display = 'flex';
-                setTimeout(() => {
-                    gameContainer.style.opacity = '1';
-                }, 100);
+                gameContainer.style.opacity = '1';
+                
+                if (climate === 'warm') {
+                    gameContainer.style.backgroundImage = "url('warm_background.jpg')";
+                } else if (climate === 'cold') {
+                    gameContainer.style.backgroundImage = "url('cold_background.jpg')";
+                }
             }, 500);
             
             localStorage.setItem('climate', climate);
