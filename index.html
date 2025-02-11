@@ -29,8 +29,6 @@
             width: 100vw;
             height: 100vh;
             position: relative;
-            background: no-repeat center center;
-            background-size: cover;
             opacity: 0;
             transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
             flex-direction: column;
@@ -38,6 +36,7 @@
             align-items: center;
             padding-bottom: 80px;
             visibility: hidden;
+            background: #1e1e1e;
         }
         .balance {
             font-size: 24px;
@@ -63,7 +62,7 @@
             border: none;
             border-radius: 10px;
             transition: transform 0.2s ease-in-out, background 0.3s;
-            background: #1e1e1e;
+            background: #333;
             color: white;
             margin: 5px;
             text-align: center;
@@ -73,7 +72,7 @@
             text-overflow: ellipsis;
         }
         .btn:hover {
-            background: #333;
+            background: #444;
             transform: scale(1.1);
         }
         .climate-selection {
@@ -143,12 +142,6 @@
                 setTimeout(() => {
                     gameContainer.style.opacity = '1';
                 }, 50);
-                
-                if (climate === 'warm' || climate === 'cold') {
-                    
-                    gameContainer.style.backgroundSize = "cover";
-                    gameContainer.style.backgroundPosition = "center";
-                }
             }, 500);
             
             localStorage.setItem('climate', climate);
