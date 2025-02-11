@@ -33,7 +33,6 @@
             background-size: cover;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
-            display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
@@ -142,7 +141,9 @@
                 gameContainer.style.opacity = '1';
                 
                 if (climate === 'warm' || climate === 'cold') {
-                    gameContainer.style.backgroundImage = "url('C:\Users\user\Desktop\miningsimulator\картинки\фон\ангар.jpg')";
+                    gameContainer.style.backgroundImage = "url('"C:\Users\user\Desktop\miningsimulator\картинки\фон\ангар.jpg"')";
+                    gameContainer.style.backgroundSize = "cover";
+                    gameContainer.style.backgroundPosition = "center";
                 }
             }, 500);
             
