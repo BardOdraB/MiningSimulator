@@ -25,12 +25,11 @@
             align-items: center;
         }
         .container {
-            display: none;
             width: 100vw;
             height: 100vh;
             position: relative;
             opacity: 0;
-            transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
+            transition: opacity 0.5s ease-in-out;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
@@ -141,7 +140,7 @@
                 gameContainer.style.display = 'flex';
                 setTimeout(() => {
                     gameContainer.style.opacity = '1';
-                }, 50);
+                }, 100);
             }, 500);
             
             localStorage.setItem('climate', climate);
