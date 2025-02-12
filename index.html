@@ -28,15 +28,15 @@
             width: 100vw;
             height: 100vh;
             position: relative;
-            opacity: 0;
+            opacity: 1;
             transition: opacity 0.5s ease-in-out;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
             padding-bottom: 80px;
-            visibility: hidden;
             background-size: cover;
             background-position: center;
+            display: flex;
         }
         .balance {
             font-size: 18px;
@@ -118,11 +118,7 @@
         document.getElementById("balance").innerText = balance;
 
         function goBack() {
-            let gameContainer = document.getElementById('game-container');
-            gameContainer.style.opacity = '0';
-            setTimeout(() => {
-                gameContainer.style.display = 'none';
-            }, 500);
+            alert("Возвращение назад");
         }
 
         function openShop() {
@@ -143,5 +139,3 @@
     </script>
 </body>
 </html>
-
-
