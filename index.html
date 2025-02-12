@@ -37,6 +37,32 @@
             visibility: hidden;
             background-size: cover;
             background-position: center;
+                }
+        .shop-container {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .hexagon {
+            width: 80px;
+            height: 92px;
+            background: #ffcc00;
+            margin: 5px;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: black;
+            cursor: pointer;
         }
         .balance {
             font-size: 18px;
@@ -165,16 +191,37 @@
             localStorage.setItem('climate', climate);
         }
 
+        <div class="shop-container" id="shop-container">
+        <button class="back-button" onclick="closeShop()">
+            ←
+        </button>
+        <div class="hexagon">1</div>
+        <div class="hexagon">2</div>
+        <div class="hexagon">3</div>
+        <div class="hexagon">4</div>
+        <div class="hexagon">5</div>
+        <div class="hexagon">6</div>
+    </div>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+
+        function openShop() {
+            document.getElementById('game-container').style.display = 'none';
+            document.getElementById('shop-container').style.display = 'flex';
+        }
+
+        function closeShop() {
+            document.getElementById('shop-container').style.display = 'none';
+            document.getElementById('game-container').style.display = 'flex';
+        }
+
         function goBack() {
-            let gameContainer = document.getElementById('game-container');
-            let climateSelection = document.getElementById('climate-selection');
-            gameContainer.style.opacity = '0';
-            setTimeout(() => {
-                gameContainer.style.display = 'none';
-                climateSelection.style.display = 'flex';
-                climateSelection.style.opacity = '1';
-            }, 500);
+            document.getElementById('game-container').style.display = 'none';
+            document.getElementById('climate-selection').style.display = 'flex';
         }
     </script>
 </body>
 </html>
+
