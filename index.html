@@ -130,16 +130,16 @@
     
     <div class="container" id="game-container">
         <button class="back-button" onclick="goBack()">
-            <img src="back_icon.jpg" alt="Назад">
+            ←
         </button>
         <h2>Симулятор майнинга</h2>
         <p class="balance">Баланс: <span id="balance">0</span> монет</p>
         <div class="buttons">
-            <button class="btn"><img src="https://raw.githubusercontent.com/BardOdraB/images/refs/heads/main/shop_icon.jpg" alt="Магазин">Магазин</button>
-            <button class="btn"><img src="https://raw.githubusercontent.com/BardOdraB/images/refs/heads/main/workshop_icon.jpg" alt="Мастерская">Мастерская</button>
-            <button class="btn"><img src="https://raw.githubusercontent.com/BardOdraB/images/refs/heads/main/home_icon.jpg" alt="Главная">Главная</button>
-            <button class="btn"><img src="https://raw.githubusercontent.com/BardOdraB/images/refs/heads/main/wallet_icon.jpg" alt="Кошелёк">Кошелёк</button>
-            <button class="btn"><img src="https://raw.githubusercontent.com/BardOdraB/images/refs/heads/main/settings_icon.jpg" alt="Настройки">Настройки</button>
+            <button class="btn"><img src="shop_icon.jpg" alt="Магазин">Магазин</button>
+            <button class="btn"><img src="workshop_icon.jpg" alt="Мастерская">Мастерская</button>
+            <button class="btn"><img src="home_icon.jpg" alt="Главная">Главная</button>
+            <button class="btn"><img src="wallet_icon.jpg" alt="Кошелёк">Кошелёк</button>
+            <button class="btn"><img src="settings_icon.jpg" alt="Настройки">Настройки</button>
         </div>
     </div>
 
@@ -160,11 +160,6 @@
                 gameContainer.style.visibility = 'visible';
                 gameContainer.style.display = 'flex';
                 gameContainer.style.opacity = '1';
-             if (climate === 'warm') {
-                    gameContainer.style.backgroundImage = "url('https://raw.githubusercontent.com/BardOdraB/images/main/warm_background.jpg')";
-                } else if (climate === 'cold') {
-                    gameContainer.style.backgroundImage = "url('https://raw.githubusercontent.com/BardOdraB/images/main/cold_background.jpg')";
-                }
             }, 500);
             
             localStorage.setItem('climate', climate);
