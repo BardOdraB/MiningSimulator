@@ -37,32 +37,6 @@
             visibility: hidden;
             background-size: cover;
             background-position: center;
-                }
-        .shop-container {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .hexagon {
-            width: 80px;
-            height: 92px;
-            background: #ffcc00;
-            margin: 5px;
-            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            font-weight: bold;
-            color: black;
-            cursor: pointer;
         }
         .balance {
             font-size: 18px;
@@ -118,54 +92,21 @@
             width: 32px;
             height: 32px;
         }
-        .climate-selection {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100vw;
-            height: 100vh;
-            background: url('climate_selection.jpg') no-repeat center center;
-            background-size: cover;
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .climate-btn {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            transition: transform 0.2s ease-in-out, background 0.3s;
-            background: #ffcc00;
-            color: #333;
-        }
-        .climate-btn:hover {
-            background: #ff9900;
-            transform: scale(1.1);
-        }
     </style>
 </head>
 <body>
-    <div class="climate-selection" id="climate-selection">
-        <h2>Выберите климат:</h2>
-        <button class="climate-btn" onclick="selectClimate('warm')">Тёплый</button>
-        <button class="climate-btn" onclick="selectClimate('cold')">Холодный</button>
-    </div>
-    
     <div class="container" id="game-container">
         <button class="back-button" onclick="goBack()">
-            ←
+            <img src="back_icon.jpg" alt="Назад">
         </button>
         <h2>Симулятор майнинга</h2>
         <p class="balance">Баланс: <span id="balance">0</span> монет</p>
         <div class="buttons">
-            <button class="btn"><img src="shop_icon.jpg" alt="Магазин">Магазин</button>
-            <button class="btn"><img src="workshop_icon.jpg" alt="Мастерская">Мастерская</button>
-            <button class="btn"><img src="home_icon.jpg" alt="Главная">Главная</button>
-            <button class="btn"><img src="wallet_icon.jpg" alt="Кошелёк">Кошелёк</button>
-            <button class="btn"><img src="settings_icon.jpg" alt="Настройки">Настройки</button>
+            <button class="btn" onclick="openShop()"><img src="shop_icon.jpg" alt="Магазин">Магазин</button>
+            <button class="btn" onclick="openWorkshop()"><img src="workshop_icon.jpg" alt="Мастерская">Мастерская</button>
+            <button class="btn" onclick="openHome()"><img src="home_icon.jpg" alt="Главная">Главная</button>
+            <button class="btn" onclick="openWallet()"><img src="wallet_icon.jpg" alt="Кошелёк">Кошелёк</button>
+            <button class="btn" onclick="openSettings()"><img src="settings_icon.jpg" alt="Настройки">Настройки</button>
         </div>
     </div>
 
@@ -176,52 +117,31 @@
         let balance = localStorage.getItem("balance") ? parseInt(localStorage.getItem("balance")) : 0;
         document.getElementById("balance").innerText = balance;
 
-        function selectClimate(climate) {
-            let climateSelection = document.getElementById('climate-selection');
+        function goBack() {
             let gameContainer = document.getElementById('game-container');
-            
-            climateSelection.style.opacity = '0';
+            gameContainer.style.opacity = '0';
             setTimeout(() => {
-                climateSelection.style.display = 'none';
-                gameContainer.style.visibility = 'visible';
-                gameContainer.style.display = 'flex';
-                gameContainer.style.opacity = '1';
+                gameContainer.style.display = 'none';
             }, 500);
-            
-            localStorage.setItem('climate', climate);
         }
-
-        <div class="shop-container" id="shop-container">
-        <button class="back-button" onclick="closeShop()">
-            ←
-        </button>
-        <div class="hexagon">1</div>
-        <div class="hexagon">2</div>
-        <div class="hexagon">3</div>
-        <div class="hexagon">4</div>
-        <div class="hexagon">5</div>
-        <div class="hexagon">6</div>
-    </div>
-
-    <script>
-        let tg = window.Telegram.WebApp;
-        tg.expand();
 
         function openShop() {
-            document.getElementById('game-container').style.display = 'none';
-            document.getElementById('shop-container').style.display = 'flex';
+            alert("Открываем магазин!");
         }
-
-        function closeShop() {
-            document.getElementById('shop-container').style.display = 'none';
-            document.getElementById('game-container').style.display = 'flex';
+        function openWorkshop() {
+            alert("Открываем мастерскую!");
         }
-
-        function goBack() {
-            document.getElementById('game-container').style.display = 'none';
-            document.getElementById('climate-selection').style.display = 'flex';
+        function openHome() {
+            alert("Возвращаемся на главную!");
+        }
+        function openWallet() {
+            alert("Открываем кошелек!");
+        }
+        function openSettings() {
+            alert("Открываем настройки!");
         }
     </script>
 </body>
 </html>
+
 
